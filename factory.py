@@ -1,6 +1,17 @@
 from enum import Enum
 from abc import ABC, abstractmethod
 
+# Products
+class Dough(ABC): pass
+class ThinCrustDough(Dough): pass
+class ThickCrustDough(Dough): pass
+
+class Sauce(ABC): pass
+class TomatoSauce(Sauce): pass
+class SpicySauce(Sauce): pass
+
+
+
 # Abstract Factory
 class PizzaIngredientFactory(ABC):
     @abstractmethod
@@ -21,14 +32,6 @@ class ChicagoIngredientFactory(PizzaIngredientFactory):
     def create_sauce(self) -> Sauce:
         return SpicySauce()
 
-# Products
-class Dough(ABC): pass
-class ThinCrustDough(Dough): pass
-class ThickCrustDough(Dough): pass
-
-class Sauce(ABC): pass
-class TomatoSauce(Sauce): pass
-class SpicySauce(Sauce): pass
 
 
 class PizzaType(Enum):
